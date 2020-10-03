@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla&display=swap" rel="stylesheet" type="text/css">
+<html>
+<style>
+body {
+  background-image: url('https://img.freepik.com/free-vector/abstract-geometric-shape-connection-with-3d-cubes-background_42705-105.jpg?size=626&ext=jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+h1{
+ padding: 40px;
+ margin: 20px;
+ font-size: 30px;
+ color: blue;
+ font-family: Lobster;
+}
+.thick-green-border{
+  border-color: green;
+  border-width: 10px;
+  border-style: solid;
+  background-color: yellow;
+}
+.thick-red-border{
+  border-color: red;
+  border-width: 10px;
+  border-style: dotted;
+  border-radius: 10px;
+  color: Black;
+  background-color: rgb(173,216,230);
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: auto;
+  border-radius: 10px;
+  color: white;
+  padding: 20px 140px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+h2{
+font-size: 30px;
+font-family: Piazzolla;
+}
+form{
+font-size: 30px;
+padding: 180px;
+margin: auto;
+}
+.red-text{
+  color: red;
+}
+</style>
+<h1 class="thick-green-border"> Palindrome Checker Using Regex Handling </h1>
+<body>
+<h2 class="thick-red-border"> Palindrome Regex Checker Built Using JavaScript, styled using CSS </h2>
+<form name="myForm" onsubmit="return validateForm()" method="post">
+  Enter String: <input type="text" name="fname">
+  <br></br>
+  <input type="submit" value="Submit" class="button">
+</form>
+<script>
+var isAlpha = function(ch){
+  return typeof ch === "string" && ch.length === 1
+         && (ch >= "a" && ch <= "z" || ch >= "A" && ch <= "Z" || ch >= "0" && ch <= "9");
+}
+function validateForm() {
+  var str = document.forms["myForm"]["fname"].value;
+  var fans = "";
+   for(var i = 0; i < str.length ; i++){
+     if(isAlpha(str[i])){
+       fans+=str[i];
+     }
+   }
+   var i = 0;
+   var j = fans.length-1;
+   var flag = true;
+   fans = fans.toLowerCase();
+   while(i<=j){
+     if(fans[i]!=fans[j]){
+       flag = false;
+       break;
+     }
+     i++;
+     j--;
+   }
+   if(flag)
+alert("The given string: " + str + " is a palindrome after simplification .");
+   else
+   alert("The given string " + str + "is not a palindrome :(");
+   return false;
+}
+</script>
+</body>
+</html>
