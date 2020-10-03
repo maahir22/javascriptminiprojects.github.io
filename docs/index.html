@@ -55,6 +55,8 @@ h1{
 h2{
 font-size: 30px;
 font-family: Piazzolla;
+padding: 40px;
+ margin: 20px;
 }
 form{
 font-size: 30px;
@@ -65,9 +67,9 @@ margin: auto;
   color: red;
 }
 </style>
-<h1 class="thick-green-border"> Palindrome Checker Using Regex Handling </h1>
+<h1 class="thick-green-border center"> Palindrome Checker Using Regex Handling </h1>
 <body>
-<h2 class="thick-red-border"> Palindrome Regex Checker Built Using JavaScript, styled using CSS </h2>
+<h2 class="thick-red-border center"> Palindrome Regex Checker Built Using JavaScript, styled using CSS </h2>
 <form name="myForm" onsubmit="return validateForm()" method="post">
   Enter String: <input type="text" name="fname">
   <br></br>
@@ -99,9 +101,9 @@ function validateForm() {
      j--;
    }
    if(flag)
-alert("The given string: " + str + " is a palindrome after simplification .");
+alert("The given string: " + str + " " +"is a palindrome after simplification .");
    else
-   alert("The given string " + str + "is not a palindrome :(");
+   alert("The given string " + str +" "+ "is not a palindrome :(");
    return false;
 }
 </script>
